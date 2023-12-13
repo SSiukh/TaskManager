@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/icon-clock.png" type="image/x-icon">
+</head>
+<body>
+    <div id="login-full">
+        <div id="login-main-div">
+            <img onclick="redirToMain()" id="login-close-img" src="img\login-close.png" alt="close">
+            <h1 id="login-h1">Вхід</h1>
+            <div id="login-input-div">
+                <input type="email" id="login-input-email" placeholder="Введіть електронну адресу">
+                <input type="password" id="login-input-password" placeholder="Введіть пароль">
+                <div id="login-checkbox"> 
+                    <input type="checkbox" id="login-checkbox-img">
+                    <span id="login-checkbox-text">Запам'ятати мене</span>
+            </div>
+            </div>
+            <button id="login-button" onclick="loginDataforName()"><span id="login-button-text">Увійти</span></button>
+            <p id="login-forgot">Забули пароль?<span id="login-forgot-link"> Відновити тут.</span></p>  
+            <p id="login-error">Логін або пароль неправильний</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

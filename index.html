@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeCraft</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/icon-clock.png" type="image/x-icon">
+</head>
+<body>
+    <header id="header">
+        <h1 id="logo-menu" onclick="redirToMain()">TIMECRAFT</h1>
+        <div id="headmenu">
+            <span class="headmenu-items" onclick="aboutUs()">Про нас</span>
+            <span class="headmenu-items" onclick="commandWork()">Для команд</span>
+            <span class="headmenu-items" onclick="request()">Зворотній зв'язок</span>
+            <span class="headmenu-items" onclick="redirToRegistration()">Реєстрація</span>
+        </div>
+        <div id="button-menu">
+            <button onclick="redirToLogin()" id="butmenu-login">Увійти</button>
+            <button onclick="redirToRegistration()" id="butmenu-start"><span id="butmenu-start-text">Розпочати безкоштовно</span></button>
+        </div>
+        <script src="script.js"></script>
+    </header>
+    <div id="first-main-div">
+        <div id="first-main-div-inform-div">
+            <div id="first-main-div-inform-div-main-inform">
+                <div id="first-main-text">
+                    <h1 id="first-main-h1">Організовуйте роботу та життя легко!</h1>
+                    <p id="first-main-p">TIMECRAFT - список справ і тайм-менеджер №1 в Україні. Працюй в команді, отримуй досягнення та плануй свій день на повну!</p>
+                    <button onclick="redirToRegistration()" id="butmenu-start"><span id="butmenu-start-text">Розпочати безкоштовно</span></button>
+                </div>
+                <div id="first-main-div-labels">
+                    <div class="block-labels-main">
+                        <div class="temp-block-labels-main"><img class="temp-block-tick-main" src="img/main-div-tick.png" alt="tick"><span class="temp-block-text-main">Task management</span></div>
+                        <div class="temp-block-labels-main"><img class="temp-block-tick-main" src="img/main-div-tick.png" alt="tick"><span class="temp-block-text-main">Project management</span></div>
+                        <div class="temp-block-labels-main"><img class="temp-block-tick-main" src="img/main-div-tick.png" alt="tick"><span class="temp-block-text-main">Time tracking</span></div>
+                    </div>
+                    <div class="block-labels-main">
+                        <div class="temp-block-labels-main"><img class="temp-block-tick-main" src="img/main-div-tick.png" alt="tick"><span class="temp-block-text-main">Tasks & To-do`s</span></div>
+                        <div class="temp-block-labels-main"><img class="temp-block-tick-main" src="img/main-div-tick.png" alt="tick"><span class="temp-block-text-main">Goals & strategy</span></div>
+                        <div class="temp-block-labels-main"><img class="temp-block-tick-main" src="img/main-div-tick.png" alt="tick"><span class="temp-block-text-main">Bussiness operations</span></div>
+                    </div>
+                    <div class="block-labels-main">
+                        <div class="temp-block-labels-main"><img class="temp-block-tick-main" src="img/main-div-tick.png" alt="tick"><span class="temp-block-text-main">Resource management</span></div>
+                        <div class="temp-block-labels-main"><img class="temp-block-tick-main" src="img/main-div-tick.png" alt="tick"><span class="temp-block-text-main">Collaboration tools</span></div>
+                        <div class="temp-block-labels-main"><img class="temp-block-tick-main" src="img/main-div-tick.png" alt="tick"><span class="temp-block-text-main">Client projects</span></div>
+                    </div>
+                </div>
+            </div>
+            <img src="img/online-learning-concept.png" alt="online-learning-concept">
+        </div>
+        <div id="first-main-info-block">
+            <div class="first-main-info-blocks">
+                <img class="first-main-info-blocks-img" src="img/main-inform-calendar.svg" alt="calendar">
+                <h3 class="first-main-info-blocks-h">Ефективне планування завдань</h3>
+                <p class="first-main-info-blocks-p">Організуйте свою роботу шляхом надання важливості, дедлайнів і призначення відповідальних осіб для кожного завдання</p>
+            </div>
+            <div class="first-main-info-blocks">
+                <img class="first-main-info-blocks-img" src="img/main-inform-calendar.svg" alt="calendar">
+                <h3 class="first-main-info-blocks-h">Спільна робота над проектами</h3>
+                <p class="first-main-info-blocks-p">Запрошуйте колег до спільних проектів, розподіляйте завдання і вносьте зміни в реальному часі</p>
+            </div>
+            <div class="first-main-info-blocks">
+                <img class="first-main-info-blocks-img" src="img/main-inform-calendar.svg" alt="calendar">
+                <h3 class="first-main-info-blocks-h">Інтеграція завдань із календарем</h3>
+                <p class="first-main-info-blocks-p">Синхронізуйте таски з календарем для повного контролю над графіком</p>
+            </div>
+        </div>
+    </div>
+    <div class="board-div"></div>
+    <div id="second-main-div">
+        <div id="second-main-div-margin">
+            <div id="second-main-div-div">
+                <img id="second-main-div-img-div" src="img/second-main-website-maintenance.png" alt="maintenance">
+            </div>
+            <div id="second-main-text-div">
+                <h2 id="second-main-div-h">Ефективне управління завданнями з TIMECRAFT</h2>
+                <p id="second-main-div-p"> Покращте свою продуктивність та ефективність завдяки нашому потужному та зручному
+                    таск менеджеру. Забудьте про хаос у роботі та дозвольте нашому інструменту взяти на себе
+                    усі турботи щодо організації ваших завдань та проєктів.</p>
+                <button onclick="redirToRegistration()" id="butmenu-login">Реєстрація</button>
+            </div>
+        </div>
+       
+    </div>
+    <div id="third-main-div">
+        <div id="third-main-inform-div">
+            <h1 id="third-main-div-h">Відгуки користувачів</h1>
+            <div id="third-main-div-requests">
+                <img class="requests-arrow" src="img/arrow-left.svg" alt="arrow">
+                <div class="requests-div">
+                    <div class="requests-div-div">
+                        <h3 class="requests-name">Сергій</h3>
+                        <h4 class="requests-company">ТОВ "Нова Пошта"</h4>
+                        <hr />
+                        <p class="requests-p">"Завдяки Таск Менеджеру я встигаю більше і краще організовую свій час. Зручний і простий у використанні - рекомендую!"</p>
+                        <img src="img/star-third.png" alt="">
+                    </div>
+                </div>
+                <div class="requests-div">
+                    <div class="requests-div-div">
+                        <h3 class="requests-name">Марія</h3>
+                        <h4 class="requests-company">ТОВ "Розетка"</h4>
+                        <hr />
+                        <p class="requests-p">"Таск Менеджер став невід'ємною частиною моєї робочої рутини. Легко створювати, відстежувати та завершувати завдання."</p>
+                        <img src="img/star-third.png" alt="">
+                    </div>
+                </div>
+                <div class="requests-div">
+                    <div class="requests-div-div">
+                        <h3 class="requests-name">Ольга</h3>
+                        <h4 class="requests-company">ТОВ "Буд-Постач"</h4>
+                        <hr />
+                        <p class="requests-p">"Прекрасний інструмент для управління завданнями! Тепер я впевнена, що нічого не втрачу та завжди буду в курсі своїх завдань."</p>
+                        <img src="img/star-third.png" alt="">
+                    </div>
+                </div>
+                <img class="requests-arrow" src="img/arrow-right.svg" alt="arrow">
+            </div>
+        </div>
+    </div>
+    <div class="board-div"></div>
+    <div id="fourth-main-div">
+            <img id="fourth-img" src="img/Team-Discussion-fourth.png" alt="team">
+            <div id="fourth-main-div-text">
+                <h1 id="fourth-h">Робота в команді</h1>
+                <p id="fourth-p">
+                    Забудьте про хаос у командній роботі та відкрийте для себе новий рівень організації завдань з нашим Таск Менеджером. 
+                    Незалежно від того, чи ви керівник проекту чи звичайний учасник команди, наш інструмент дозволяє ефективно розподіляти завдання, 
+                    стежити за їх виконанням та спілкуватися з командою, усе це на одному сайті.
+                </p>
+                <div id="fourth-block-labels">
+                    <div class="fourth-block-labels-main" onclick="goToTg()"><img src="img/logos-telegram.svg" alt="tick"><span class="fourth-block-text-main">@tg_timecraft</span></div>
+                    <div class="fourth-block-labels-main" onclick="goToFb()"><img src="img/logos-facebook.svg" alt="tick"><span class="fourth-block-text-main">@fb_timecraft</span></div>
+                    <div class="fourth-block-labels-main" onclick="goToInst()"><img src="img/logos-instagram.svg" alt="tick"><span class="fourth-block-text-main">@inst_timecraft</span></div>
+                </div>
+            </div>
+    </div>
+    <footer id="main-footer">
+        <div id="main-div-footer">
+            <div id="footer-inform">
+                <div id="first-footer-inform">
+                    <p onclick="aboutUs()" class="footer-link">Про нас</p>
+                    <p onclick="redirToLogin()" class="footer-link">Вхід</p>
+                    <p onclick="redirToRegistration()" class="footer-link">Реєстрація</p>
+                    <p onclick="redirToMain()" class="footer-link">Головна сторінка</p>
+                </div>
+            </div>
+            <div id="request-footer">
+                <h2>Зворотній зв'язок</h2>
+                <div id="request-footer-icon">
+                    <img onclick="goToTg()" src="img/logos-telegram.svg" alt="tg">
+                    <img onclick="goToFb()" src="img/logos-facebook.svg" alt="fb">
+                    <img onclick="goToInst()" src="img/logos-instagram.svg" alt="inst">
+                </div>
+            </div>
+            <div id="logo-menu" onclick="redirToMain()">TIMECRAFT</div>
+        </div>
+    </footer>
+
+</body>
+</html>

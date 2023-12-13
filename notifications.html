@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeCraft</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/icon-clock.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+</head>
+<body>
+    <header id="dash-header">
+        <div id="dash-header-first">
+            <div id="dash-header-logo">
+                <h1 id="logo-menu">TIMECRAFT</h1>
+            </div>
+            <div id="dash-header-time-div">
+                <p id="dash-header-date">{{date}}</p>
+                <p id="dash-header-time">{{time}}</p>
+            </div>
+        </div>
+        <div id="dash-header-second">
+            <div id="dash-header-second-div">
+                <h2 id="dash-header-second-div-h">Командна робота</h2>
+            </div>
+            <img onclick="redirToTeam()" id="img-plus" src="img/Plus.svg" alt="plus">
+        </div>
+        <div id="dash-header-third">
+            <img id="dash-header-third-img" src="img/Bell.svg" alt="bell">
+            <p id="dash-header-third-text" onclick="showHeadNotify(1)">Останнє сповіщення</p>
+        </div>
+        <div id="dash-header-fourth">
+            <button onclick="redirToDashBoard()" id="butmenu-login">
+                <span>Додати нове завдання</span>
+            </button>
+            <button onclick="showModalMeeting()" id="butmenu-start">
+                <span>Призначити мітинг</span>
+            </button>
+        </div>
+    </header>
+    <div id="main-notification-div">
+            <div id="dash-sidebar">
+                <div id="dash-sidebar-photo">
+                    <img id="dash-sidebar-user-photo" src="img/user-photo.png" alt="user">
+                </div>
+                <div id="dash-sidebar-icon-div">
+                    <div onclick="redirToDashBoard()" class="sidebar-icon"><img src="img/Dashboard-wb.svg" alt="dash"><span class="sidebar-icon-text">Панель</span></div>
+                    <div onclick="redirToTeam()" class="sidebar-icon"><img src="img/Team.svg" alt="team"><span class="sidebar-icon-text">Команда</span></div>
+                    <div id="sidebar-icon-get"><img src="img/Bell-sidebar.svg" alt="bell"><span id="sidebar-icon-get-text">Сповіщення</span></div>
+                    <div onclick="redirToExit()" class="sidebar-icon"><img src="img/logout.svg" alt="logout"><span class="sidebar-icon-text">Вийти</span></div>
+                </div>
+            </div>      
+            <div id="notifications-div">
+                <div  id="notifications-1">
+                    <img onclick="showInfoNotify(1)" class="notify-user-img" src="img/user-photo.png" alt="user">
+                    <span class="notify-event"></span>
+                    <span class="notify-date"></span>
+                    <img onclick="closeNotification(1)" src="img/login-close.png" alt="">
+                </div>
+                <div  id="notifications-2">
+                    <img onclick="showInfoNotify(2)" class="notify-user-img" src="img/user-photo.png" alt="user">
+                    <span class="notify-event"></span>
+                    <span class="notify-date"></span>
+                    <img onclick="closeNotification(2)" src="img/login-close.png" alt="">
+                </div>
+                <div  id="notifications-3">
+                    <img onclick="showInfoNotify(3)" class="notify-user-img" src="img/user-photo.png" alt="user">
+                    <span class="notify-event"></span>
+                    <span class="notify-date"></span>
+                    <img onclick="closeNotification(3)" src="img/login-close.png" alt="">
+                </div>
+                <div  id="notifications-4">
+                    <img onclick="showInfoNotify(4)" class="notify-user-img" src="img/user-photo.png" alt="user">
+                    <span class="notify-event"></span>
+                    <span class="notify-date"></span>
+                    <img onclick="closeNotification(4)" src="img/login-close.png" alt="">
+                </div>
+                <div  id="notifications-5">
+                    <img onclick="showInfoNotify(5)" class="notify-user-img" src="img/user-photo.png" alt="user">
+                    <span class="notify-event"></span>
+                    <span class="notify-date"></span>
+                    <img onclick="closeNotification(5)" src="img/login-close.png" alt="">
+                </div>
+            </div>
+            <div id="modal-add-meeting">
+                <img onclick="closeModalAddMeeting()" id="modal-add-task-close" src="img/login-close.png" alt="close">
+                <h2 id="h-modal-add-task">Призначити мітинг</h2>
+                <input id="modal-add-task-text-1" type="text" placeholder="Тема мітингу">
+                <input id="modal-add-task-text-2" type="text" placeholder="Посилання на мітинг, місце">
+                <div id="modal-add-task-div-buttons">
+                    <button id="modal-add-task-editors">Учасники</button>
+                    <input type="date" id="calendarInput-modal-add-task">
+                </div>
+                <button onclick="addmeetings()" id="modal-add-task-add-button"><span id="modal-add-task-add-button-text">Призначити</span></button>
+            </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeCraft</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/icon-clock.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+</head>
+<body>
+    <header id="dash-header">
+        <div id="dash-header-first">
+            <div id="dash-header-logo">
+                <h1 id="logo-menu">TIMECRAFT</h1>
+            </div>
+            <div id="dash-header-time-div">
+                <p id="dash-header-date">{{date}}</p>
+                <p id="dash-header-time">{{time}}</p>
+            </div>
+        </div>
+        <div id="dash-header-second">
+            <div id="dash-header-second-div">
+                <h2 id="dash-header-second-div-h">Командна робота</h2>
+            </div>
+            <img id="img-plus" src="img/Plus.svg" alt="plus">
+        </div>
+        <div id="dash-header-third">
+            <img onclick="redirToNotifications()" id="dash-header-third-img" src="img/Bell.svg" alt="bell">
+        </div>
+        <div id="dash-header-fourth">
+            <button onclick="redirToDashBoard()" id="butmenu-login">
+                <span>Додати нове завдання</span>
+            </button>
+            <button onclick="redirToNotifications()" id="butmenu-start">
+                <span>Призначити мітинг</span>
+            </button>
+        </div>
+    </header>
+    <div id="main-team-div">
+            <div id="dash-sidebar">
+                <div id="dash-sidebar-photo">
+                    <img id="dash-sidebar-user-photo" src="img/user-photo.png" alt="user">
+                </div>
+                <div id="dash-sidebar-icon-div">
+                    <div onclick="redirToDashBoard()" class="sidebar-icon"><img src="img/Dashboard-wb.svg" alt="dash"><span class="sidebar-icon-text">Панель</span></div>
+                    <div id="sidebar-icon-get"><img src="img/Team.svg" alt="team"><span id="sidebar-icon-get-text">Команда</span></div>
+                    <div onclick="redirToNotifications()" class="sidebar-icon"><img src="img/Bell-sidebar.svg" alt="bell"><span class="sidebar-icon-text">Сповіщення</span></div>
+                    <div onclick="redirToExit()" class="sidebar-icon"><img src="img/logout.svg" alt="logout"><span class="sidebar-icon-text">Вийти</span></div>
+                </div>
+            </div>  
+            <div id="temp-team-div">
+                <div id="modal-add-member">
+                    <img onclick="closeModalAddMember()" id="modal-add-member-close" src="img/login-close.png" alt="close">
+                    <h2 id="h-modal-member-task">Додати учасника</h2>
+                    <input id="modal-add-member-text-1" type="text" placeholder="email">
+                    <input id="modal-add-member-text-2" type="text" placeholder="ім'я">
+                    <button onclick="addMember()" id="modal-add-member-button"><span id="modal-add-member-button-text">Додати</span></button>
+                </div>
+                <div id="team-div">
+                    <button onclick="showModalAddMember()" id="team-add-member"><span id="text-team-add-member">Додати члена команди</span></button>
+                    <div id="team-title-div">
+                        <div class="team-title"><span class="team-title-text">Члени команди</span></div>
+                        <div class="team-title"><span class="team-title-text">Завдань виконується</span></div>
+                        <div class="team-title"><span class="team-title-text">Завдань виконано</span></div>
+                    </div>
+                </div>   
+            </div> 
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

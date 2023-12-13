@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/icon-clock.png" type="image/x-icon">
+</head>
+<body>
+    <div id="registration-full">
+        <div id="registration-main-div">
+            <img onclick="redirToMain()" id="login-close-img" src="img\login-close.png" alt="close">
+            <h1 id="registration-h1">Реєстрація</h1>
+            <div id="registration-input-div">
+                <input type="text" id="registration-input-name" placeholder="Введіть прізвище та ім'я">
+                <input type="email" id="registration-input-email" placeholder="Введіть електронну адресу">
+                <input type="password" id="registration-input-password" placeholder="Введіть пароль">
+                <input type="password" id="registration-input-password" placeholder="Підтвердіть пароль">
+                <div id="login-checkbox"> 
+                    <input type="checkbox" id="login-checkbox-img">
+                    <span id="login-checkbox-text">Запам'ятати мене</span>
+            </div>
+            </div>
+            <button id="registration-button" onclick="register()"><span id="registration-button-text">Зареєструватись</span></button>
+            <p id="registration-forgot">Вже зареєстровані?<span id="registration-forgot-link" onclick="redirToLogin()"> Увійти тут.</span></p>  
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

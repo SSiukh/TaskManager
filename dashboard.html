@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeCraft</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/icon-clock.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+</head>
+<body >
+    <header id="dash-header">
+        <div id="dash-header-first">
+            <div id="dash-header-logo">
+                <h1 id="logo-menu">TIMECRAFT</h1>
+            </div>
+            <div id="dash-header-time-div">
+                <p id="dash-header-date">{{date}}</p>
+                <p id="dash-header-time">{{time}}</p>
+            </div>
+        </div>
+        <div id="dash-header-second">
+            <div id="dash-header-second-div">
+                <h2 id="dash-header-second-div-h">Командна робота</h2>
+            </div>
+            <img onclick="redirToTeam()" id="img-plus" src="img/Plus.svg" alt="plus">
+        </div>
+        <div id="dash-header-third" onclick="redirToNotifications()">
+            <img id="dash-header-third-img" src="img/Bell.svg" alt="bell">
+        </div>
+        <div id="dash-header-fourth">
+            <button onclick="showModalAddTask()" id="butmenu-login">
+                <span>Додати нове завдання</span>
+            </button>
+            <button id="butmenu-start" onclick="redirToNotifications()">
+                <span>Призначити мітинг</span>
+            </button>
+        </div>
+    </header>
+    <div id="main-dashboard-div">
+        <div id="modal-add-task">
+            <img onclick="closeModalAddTask()" id="modal-add-task-close" src="img/login-close.png" alt="close">
+            <h2 id="h-modal-add-task">Додати завдання</h2>
+            <input id="modal-add-task-text-1" type="text" placeholder="Заголовок завдання">
+            <input id="modal-add-task-text-2" type="text" placeholder="Опис завдання">
+            <div id="modal-add-task-div-buttons">
+                <button id="modal-add-task-editors">Виконавці</button>
+                <input type="date" id="calendarInput-modal-add-task">
+            </div>
+            <button onclick="addtasks()" id="modal-add-task-add-button"><span id="modal-add-task-add-button-text">Додати</span></button>
+        </div>
+        <div>
+            <div id="dash-sidebar">
+                <div id="dash-sidebar-photo">
+                    <img id="dash-sidebar-user-photo" src="img/user-photo.png" alt="user">
+                    <p id="username"></p>
+                </div>
+                <div id="dash-sidebar-icon-div">
+                    <div id="sidebar-icon-get"><img src="img/Dashboard-get.svg" alt="dash"><span id="sidebar-icon-get-text">Панель</span></div>
+                    <div onclick="redirToTeam()" class="sidebar-icon"><img src="img/Team.svg" alt="team"><span class="sidebar-icon-text">Команда</span></div>
+                    <div onclick="redirToNotifications()" class="sidebar-icon"><img src="img/Bell-sidebar.svg" alt="bell"><span class="sidebar-icon-text">Сповіщення</span></div>
+                    <div onclick="redirToExit()" class="sidebar-icon"><img src="img/logout.svg" alt="logout"><span class="sidebar-icon-text">Вийти</span></div>
+                </div>
+            </div>
+            <div id="dash-calendar">
+                <div id="calendar">
+                    <div id="calendar-header">
+                        <img id="dash-calendar-arrow" @click="prevMonth" src="img/arrow-left.svg" alt="left">
+                        <h2 id="dash-calendar-current-month">{{ currentMonth }}</h2>
+                        <img id="dash-calendar-arrow" @click="nextMonth" src="img/arrow-right.svg" alt="right">
+                    </div>
+                    <table id="table-calendar">
+                        <thead>
+                            <tr>
+                                <th id="calendar-day-of-week" v-for="day in daysOfWeek" :key="day"><span id="calendar-day-of-week-text">{{ day }}</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="week in weeks" :key="week">
+                                <td id="calendar-number" v-for="day in week" :class="{ 'day': true, 'today': day.isToday }" @click="selectDate(day)">
+                                    <div class="calendar-number-text">{{ day.day }}</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>        
+            <div id="dash-notes">
+                <button onclick="showModalNote()" id="dash-notes-button">Додати замітку</button>
+                <div id="modal-window-note">
+                    <img onclick="closeModalNote()" id="close-modal-note" src="img/login-close.png" alt="close">
+                    <h1 id="note-h">Додати замітку</h1>
+                    <input id="note-textarea" type="text" placeholder="Текст замітки">
+                    <div id="color-note">
+                        <img onclick="getColorNote('gray')" id="note-img-gray" src="img/gray.svg" alt="gray">
+                        <img onclick="getColorNote('#F99D32')" id="note-img-orange" src="img/orange.png" alt="orange">
+                        <img onclick="getColorNote('#0BBF13FC')" id="note-img-green" src="img/green.png" alt="green">
+                        <img onclick="getColorNote('#E1CDFE')" id="note-img-purple" src="img/purple.png" alt="purple">
+                        <img onclick="getColorNote('#7FE1EB')" id="note-img-blue" src="img/blue.png" alt="blue">
+                    </div>
+                    <p id="enter-color-note">Виберіть колір</p>
+                    <button id="note-button-add" onclick="createNote()"><span id="note-button-add-text">Додати</span></button>
+                </div>
+                <div id="container-notes-1">
+                    <img onclick="closeNote(1)" id="close-notes-1" src="img/login-close.png" alt="close">
+                    <p id="notes-text-1"></p>
+                </div>
+                <div id="container-notes-2">
+                    <img onclick="closeNote(2)" id="close-notes-2" src="img/login-close.png" alt="close">
+                    <p id="notes-text-2"></p>
+                </div>
+                <div id="container-notes-3">
+                    <img onclick="closeNote(3)" id="close-notes-3" src="img/login-close.png" alt="close">
+                    <p id="notes-text-3"></p>
+                </div>
+                <div id="container-notes-4">
+                    <img onclick="closeNote(4)" id="close-notes-4" src="img/login-close.png" alt="close">
+                    <p id="notes-text-4"></p>
+                </div>
+                <div id="container-notes-5">
+                    <img onclick="closeNote(5)" id="close-notes-5" src="img/login-close.png" alt="close">
+                    <p id="notes-text-5"></p>
+                </div>
+            </div>
+        </div>        
+        <div id="dash-tasks">
+            <div class="modal-show-task">
+                <img class="img-modal-show-task" src="img/login-close.png" alt="close">
+                <h1 class="h-modal-show-task"></h1>
+                <p class="p-modal-show-task"></p>
+                <p class="date-modal-show-task"></p>
+                <div class="button-div-modal-show-task">
+                    <button class="edit-modal-show-task">Редагувати</button>
+                    <button class="delete-modal-show-task">Видалити</button>
+                </div>
+            </div>
+            <div id="new-tasks-dash">
+                <div id="h-new-tasks-dash">
+                    <h2 id="h-new-tasks-dash-text">Нові</h2>
+                </div>
+                <div id="new-task">
+                    
+                </div>
+            </div>
+            <div id="end-tasks-dash">
+                <div id="h-end-tasks-dash">
+                    <h2 id="h-end-tasks-dash-text">Завершені</h2>
+                </div>
+                <div id="end-task">
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
